@@ -4,12 +4,9 @@ public:
         vector<int> rSum;
 
         rSum.push_back(nums[0]);
-
-        size_t j = 0;
         for (size_t i = 1; i < nums.size(); ++i)
         {
-            rSum.push_back(rSum[j] + nums[i]);
-            ++j;
+            rSum.push_back(rSum[i - 1] + nums[i]);
         }
 
         return rSum;
